@@ -167,18 +167,19 @@ img {
 }
 
 .center {
-  justify-self: center;
+  justify-content: center;
   flex-grow: 1;
   overflow: hidden;
   white-space: nowrap;
   min-width: 0;
+  width: 100%;
 }
 
 .process {
+  display: block;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  flex: 1;
   min-width: 0;
 }
 
