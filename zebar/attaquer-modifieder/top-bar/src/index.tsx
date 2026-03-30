@@ -49,10 +49,16 @@ function App() {
         <TilingBinding glazewm={output.glazewm} />
         <MediaStatus media={output.media} />
       </div>
+
       <div class="center">
-        <CurrentApps glazewm={output.glazewm} />
-        {/* <WindowTitle glazewm={output.glazewm} /> */}
+           {output.glazewm?.focusedContainer?.processName && (
+             <>
+               <span class="separator"></span>
+               <span class="process">{output.glazewm?.focusedContainer?.title}</span>
+             </>
+           )}
       </div>
+
       <div class="right">
         <Systray systray={output.systray} glazewm={output.glazewm} />
         <InputMethodStatus glazewm={output.glazewm} keyboard={output.keyboard} />

@@ -171,6 +171,15 @@ img {
   flex-grow: 1;
   overflow: hidden;
   white-space: nowrap;
+  min-width: 0;
+}
+
+.process {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
 }
 
 .right {

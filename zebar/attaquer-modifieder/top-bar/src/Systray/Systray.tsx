@@ -9,7 +9,7 @@ interface SystrayProps {
 }
 
 const Systray: Component<SystrayProps> = (props) => {
-  const [expanded, setExpanded] = createSignal(true);
+  const [expanded, setExpanded] = createSignal(false);
 
   return (
     <>
