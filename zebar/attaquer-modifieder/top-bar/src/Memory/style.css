@@ -1,0 +1,58 @@
+.memory {
+  display: flex;
+  width: 3.6rem;
+  align-items: center;
+  justify-content: center;
+
+  .i-mem {
+    padding: 2px 0;
+    width: 16px;
+    font-size: 14px;
+  }
+
+  &.clicked-animated .content {
+    animation: appear 0.2s ease;
+  }
+
+  &:hover {
+    .mem-bar {
+      transform: translateY(200%);
+      opacity: 0;
+    }
+
+    .labels {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+
+  .mem-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 16px;
+    width: 2.3rem;
+    overflow: hidden;
+    opacity: 1;
+    transform: translateY(0%);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .labels {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin-left: 18px;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .label {
+    display: flex;
+    gap: 3px;
+    justify-content: space-between;
+    font-size: 8px;
+  }
+}

@@ -1,0 +1,21 @@
+.network {
+  display: flex;
+  margin: 0 6px;
+  color: var(--white);
+  &.clicked-animated .content {
+    animation: appear 0.2s ease;
+  }
+}
+.i-wifi {
+  display: flex;
+  width: 16px;
+  height: 16px;
+  margin: 0 6px;
+}
+.i-eth {
+  display: flex;
+  width: 16px;
+  height: 16px;
+  margin: 0 6px;
+  filter: brightness(0) invert(1);
+}

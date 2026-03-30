@@ -1,0 +1,27 @@
+.app-icon {
+  width: 19px;
+  height: 19px;
+}
+.element {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1px 0 1px;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  &.clicked-animated .app-icon {
+    animation: appear 0.2s ease;
+  }
+}
+.focus {
+  background: #aeaeae33;
+  box-shadow:
+    0 -1px 1px #9e9e9e44,
+    0 1px 1px #24242455;
+}
+.title {
+  padding: 0 2px 0 2px;
+  white-space: nowrap;
+  overflow: hidden;
+}

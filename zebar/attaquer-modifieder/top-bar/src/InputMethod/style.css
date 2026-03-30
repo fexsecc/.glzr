@@ -1,0 +1,21 @@
+.input-method {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  margin: 0 6px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+
+  &:hover {
+    animation: hoverbutton 0.1s ease forwards;
+  }
+
+  .label {
+    text-align: center;
+  }
+
+  &.clicked-animated .content {
+    animation: appear 0.2s ease;
+  }
+}
