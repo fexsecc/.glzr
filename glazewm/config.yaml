@@ -173,6 +173,12 @@ keybindings:
   - commands: ['shell-exec wezterm-gui']
     bindings: ['alt+shift+enter']
 
+  - commands: ['shell-exec explorer']
+    bindings: ['alt+shift+e']
+
+  - commands: ['shell-exec taskmgr']
+    bindings: ['alt+shift+t']
+
   - commands: ['shell-exec C:\\Users\\kd\\AppData\\Local\\Chromium\\Application\\chrome.exe --incognito']  
     bindings: ['alt+shift+b']
 
