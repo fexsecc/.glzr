@@ -1,7 +1,8 @@
 /* @refresh reload */
 import "./index.css";
 import { render } from "solid-js/web";
-import { createSignal, Show } from "solid-js";
+import { createStore, reconcile } from "solid-js/store";
+import { Show } from "solid-js";
 import * as zebar from "zebar";
 import WindowsButton from "./Buttons/WindowsButton";
 import SearchButton from "./Buttons/SearchButton";
@@ -36,53 +37,36 @@ const providers = zebar.createProviderGroup({
 render(() => <App />, document.getElementById("root"));
 
 function App() {
-  const [Output, SetOutput] = createSignal(providers.outputMap);
+  const [Output, SetOutput] = createStore(providers.outputMap);
 
-  providers.onOutput((OutputMap) => SetOutput({ ...OutputMap }));
-
-  const GetActiveWindowTitle = () => {
-    const Wm = Output().glazewm;
-    if (!Wm) return null;
-
-    const ActiveWindow = Wm.allWindows?.find((Window) => Window.hasFocus);
-    if (ActiveWindow) {
-      return ActiveWindow.title;
-    }
-
-    if (Wm.focusedContainer?.type === "window") {
-      return Wm.focusedContainer.title;
-    }
-
-    return null;
-  };
+  providers.onOutput((OutputMap) => SetOutput(reconcile(OutputMap)));
 
   return (
     <div class="app">
       <div class="left">
-        <WindowsButton glazewm={Output().glazewm} />
-        {/* <SearchButton glazewm={Output().glazewm} /> */}
-        <Workspaces glazewm={Output().glazewm} />
-        <TilingBinding glazewm={Output().glazewm} />
-        <MediaStatus media={Output().media} />
+        <WindowsButton glazewm={Output.glazewm} />
+        {/* <SearchButton glazewm={Output.glazewm} /> */}
+        <Workspaces glazewm={Output.glazewm} />
+        <TilingBinding glazewm={Output.glazewm} />
+        <MediaStatus media={Output.media} />
       </div>
 
       <div class="center">
-        <Show when={GetActiveWindowTitle()}>
+        <Show when={Output.glazewm?.focusedContainer?.title}>
           <span class="separator"></span>
-          <span class="process">{GetActiveWindowTitle()}</span>
+          <span class="process">{Output.glazewm?.focusedContainer?.processName}</span>
         </Show>
       </div>
 
       <div class="right">
-        <Systray systray={Output().systray} glazewm={Output().glazewm} />
-        <InputMethodStatus glazewm={Output().glazewm} keyboard={Output().keyboard} />
-        <CpuStatus cpu={Output().cpu} glazewm={Output().glazewm} />
-        <MemoryStatus memory={Output().memory} />
-        {Output().weather && <WeatherStatus weather={Output().weather} />}
-        <NetworkStatus network={Output().network} glazewm={Output().glazewm} />
-        {/* <VolumeStatus audio={Output().audio} glazewm={Output().glazewm} /> */}
-        <BatteryStatus battery={Output().battery} glazewm={Output().glazewm} />
-        <TimeStatus date={Output().date} glazewm={Output().glazewm} />
+        <Systray systray={Output.systray} glazewm={Output.glazewm} />
+        <CpuStatus cpu={Output.cpu} glazewm={Output.glazewm} />
+        <MemoryStatus memory={Output.memory} />
+        {Output.weather && <WeatherStatus weather={Output.weather} />}
+        <NetworkStatus network={Output.network} glazewm={Output.glazewm} />
+        {/* <VolumeStatus audio={Output.audio} glazewm={Output.glazewm} /> */}
+        <BatteryStatus battery={Output.battery} glazewm={Output.glazewm} />
+        <TimeStatus date={Output.date} glazewm={Output.glazewm} />
       </div>
     </div>
   );
