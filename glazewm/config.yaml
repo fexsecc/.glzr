@@ -91,15 +91,11 @@ window_rules:
         window_class: { not_regex: 'PPTFrameClass' }
       - window_process: { regex: '.*[Rr]aycast.*' }
       - window_process: { regex: '.*[Kk]ee[Pp]ass.*' }
-      - window_process: { equals: 'ida64.exe' }
-      - window_process: { equals: 'ida.exe' }
-      - window_process: { equals: 'idaq.exe' }
-      - window_process: { equals: 'ida64.exe' }
-        window_title: { regex: '(?i)welcome to ida|please wait|untitled - ida|secondary|plugin.*' }
-      - window_process: { equals: 'ida64.exe' }
-        window_class: { regex: '(?i)IDA.*|Hex-Rays.*|Qt5QWindowIcon.*' }
-      - window_title: { regex: '(?i)hexrays|debugger' }
-        window_class: { regex: '(?i)IDA.*|Hex-Rays.*|Qt5QWindowIcon.*' }
+      - window_title: { regex: '.*[Aa]bout.*' }
+      - window_title: { regex: '.*[Qq]uick start.*' }
+      - window_title: { regex: '.*[Pp]lease wait.*' }
+      - window_process: { regex: 'ida(64)?' }
+        window_title: { regex: 'Delete.*|Structure.*|Add.*|Enter.*|Please.*|Rename.*|Jump.*|Choose.*|.*Warning.*|Edit.*' }
 
 binding_modes:
   - name: 'resize'
