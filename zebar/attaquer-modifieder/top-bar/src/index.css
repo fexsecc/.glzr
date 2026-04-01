@@ -151,7 +151,7 @@ img {
 .app {
   display: grid;
   grid-template-columns: auto 1fr auto;
-  padding: 0 16px;
+  padding: 0px;
   align-items: center;
   color: #fff;
   height: 100%;

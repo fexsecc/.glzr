@@ -91,6 +91,15 @@ window_rules:
         window_class: { not_regex: 'PPTFrameClass' }
       - window_process: { regex: '.*[Rr]aycast.*' }
       - window_process: { regex: '.*[Kk]ee[Pp]ass.*' }
+      - window_process: { equals: 'ida64.exe' }
+      - window_process: { equals: 'ida.exe' }
+      - window_process: { equals: 'idaq.exe' }
+      - window_process: { equals: 'ida64.exe' }
+        window_title: { regex: '(?i)welcome to ida|please wait|untitled - ida|secondary|plugin.*' }
+      - window_process: { equals: 'ida64.exe' }
+        window_class: { regex: '(?i)IDA.*|Hex-Rays.*|Qt5QWindowIcon.*' }
+      - window_title: { regex: '(?i)hexrays|debugger' }
+        window_class: { regex: '(?i)IDA.*|Hex-Rays.*|Qt5QWindowIcon.*' }
 
 binding_modes:
   - name: 'resize'
@@ -170,7 +179,7 @@ keybindings:
   - commands: ['wm-redraw']
     bindings: ['alt+shift+w']
 
-  - commands: ['shell-exec wezterm-gui']
+  - commands: ['shell-exec alacritty']
     bindings: ['alt+shift+enter']
 
   - commands: ['shell-exec explorer']
