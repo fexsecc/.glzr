@@ -95,7 +95,7 @@ window_rules:
       - window_title: { regex: '.*[Qq]uick start.*' }
       - window_title: { regex: '.*[Pp]lease wait.*' }
       - window_process: { regex: 'ida(64)?' }
-        window_title: { regex: 'Save.*|Load.*|Delete.*|.*tructure.*|Add.*|Enter.*|Please.*|Rename.*|Jump.*|Choose.*|.*Warning.*|Edit.*' }
+        window_title: { regex: '.*[Dd]atabase.*|Load.*|Delete.*|.*tructure.*|Add.*|Enter.*|Please.*|Rename.*|Jump.*|Choose.*|.*Warning.*|Edit.*' }
 
 binding_modes:
   - name: 'resize'
