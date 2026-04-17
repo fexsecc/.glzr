@@ -140,6 +140,7 @@ window_rules:
       - window_process: { regex: 'ida(64)?' }
         window_title: { regex: '[Xx]refs.*|Warning|BinDiff.*|Modify.*|Demangle.*|.*Information.*|.*Save.*|.*DWARF info.*|.*[Dd]atabase .*|Load .*|Delete .*|.*tructure .*|Add .*|Enter .*|Please .*|Rename .*|Jump .*|Choose .*|.*Warning .*|Edit .*' }
       - window_process: { equals: 'msrdc' }
+      - window_process: { regex: '.*VPN$' }
   # Always float VMWare Workstation due to their issues
   - commands: ["set-floating"]  
     match:  
