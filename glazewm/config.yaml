@@ -227,7 +227,7 @@ keybindings:
   - commands: ['shell-exec explorer']
     bindings: ['alt+shift+e']
 
-  - commands: ['shell-exec taskmgr']
+  - commands: ['shell-exec procexp']
     bindings: ['alt+shift+t']
 
   - commands: ['shell-exec C:\\Users\\kd\\AppData\\Local\\Chromium\\Application\\chrome.exe --incognito']  
