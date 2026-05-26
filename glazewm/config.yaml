@@ -135,7 +135,7 @@ window_rules:
       - window_process: { regex: '.*[Rr]aycast.*' }
       - window_process: { regex: '.*[Kk]ee[Pp]ass.*' }
       - window_process: { regex: 'ida(64)?' }
-        window_title: { regex: 'IDA ([Oo]ptions|[Cc]olors)|[Xx]refs.*|Warning|BinDiff.*|Modify.*|Demangle.*|.*Information.*|.*Save.*|.*DWARF info.*|.*[Dd]atabase .*|Load .*|Delete .*|.*tructure .*|Add .*|Enter .*|Please .*|Rename .*|Jump .*|Choose .*|.*Warning .*|Edit .*|.*[Aa]bout.*|.*[Qq]uick start.*|.*[Pp]lease wait.*' }
+        window_title: { not_regex: '^IDA - .*' }
       - window_process: { equals: 'msrdc' }
       - window_process: { regex: '.*VPN$' }
   # Always float VMWare Workstation due to their issues
