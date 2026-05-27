@@ -135,7 +135,7 @@ window_rules:
       - window_process: { regex: '.*[Rr]aycast.*' }
       - window_process: { regex: '.*[Kk]ee[Pp]ass.*' }
       - window_process: { regex: 'ida(64)?' }
-        window_title: { not_regex: '^IDA - .*' }
+        window_title: { not_regex: '^IDA - .*|^IDA v.*' }
       - window_process: { equals: 'msrdc' }
       - window_process: { regex: '.*VPN$' }
   # Always float VMWare Workstation due to their issues
