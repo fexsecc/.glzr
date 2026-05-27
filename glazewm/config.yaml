@@ -189,13 +189,10 @@ keybindings:
     bindings: ['alt+r']
 
   - commands: ['wm-toggle-pause']
-    bindings: ['alt+shift+p']
+    bindings: ['alt+space']
 
   - commands: ['toggle-tiling-direction']
     bindings: ['alt+v']
-
-  - commands: ['wm-cycle-focus']
-    bindings: ['alt+space']
 
   - commands: ['toggle-floating --centered']
     bindings: ['alt+shift+space']
